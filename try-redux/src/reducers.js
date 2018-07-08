@@ -1,32 +1,24 @@
 const initialState = {
-  items: [{
-    done: false,
-    content: {
-      title: "Item 1",
-      detail: "First item!!",
+  items: [...Array(5)].map((_, i) => {
+    return {
+      done: false,
+      content: {
+        title: `Item #${i}`,
+        detail: "Something to do",
+      }
     }
-  }, {
-    done: true,
-    content: {
-      title: "Some Hidden Item",
-      detail: "I'm already done...",
-    }
-  }, {
-    done: false,
-    content: {
-      title: "Item 3",
-      detail: "Number 2 is gone",
-    }
-  }]
+  })
 };
+
+console.log(initialState)
 
 function app(state = initialState, action) {
   switch(action.type) {
-    case 'COMPLETE TASK':
+    case 'TOGGLE TASK':
       return {
         items: state.items.map((item, i) => {
           return i === action.i ? {
-            done: true,
+            done: !item.done,
             content: item.content
           } : item
         })

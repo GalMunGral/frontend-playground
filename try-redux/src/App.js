@@ -6,13 +6,19 @@ import { completeTask } from './actions';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style= {{
+        width: '50vw',
+        marginLeft: '25vw',
+        fontFamily: 'system-ui'
+      }}>
         <h1>To-Do List</h1>
         {this.props.items.map((item, i) => (
           <div
             key={i}
             style={{
-              background: item.done ? 'lightgray' : 'white'
+              padding: '5px 10px',
+              color: item.done ? 'white' : 'black',
+              background: item.done ? '#1D71F2' : 'white'
             }}
             onClick={() => {
               this.props.testCallback(i)

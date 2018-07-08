@@ -1,6 +1,6 @@
 export function completeTask(i) {
   return {
-    type: 'COMPLETE TASK',
+    type: 'TOGGLE TASK',
     i
   }
 }   
