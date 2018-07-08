@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { GMap } from './Map';
 import { List } from './List';
 import { MyModal } from './Modal';

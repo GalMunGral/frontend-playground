@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Route, Link } from 'react-router-dom';
 import { MyModal } from './Modal';
 
 export const Header = () => (
-  <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav className="navbar navbar-default navbar-fixed-top">
     <div className="container-fluid">
 
       <div className="navbar-header">

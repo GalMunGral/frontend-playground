@@ -2,13 +2,6 @@ import React from 'react';
 import { Form } from './Form';
 import { Button, Modal } from 'react-bootstrap';
 
-const ModalButton = () => (
-  <div className="nav navbar-nav navbar-right"
-    style={{ marginTop: "7px", marginRight: "10px" }}>
-      <Button type="button" className="btn btn-primary" dataToggle="modal" dataTarget="#newReport">New Report</Button>
-  </div>
-)
-
 export class MyModal extends React.Component {
   constructor(props) {
     super(props);
