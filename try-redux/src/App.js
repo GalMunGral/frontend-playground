@@ -18,7 +18,8 @@ class App extends Component {
             style={{
               padding: '5px 10px',
               color: item.done ? 'white' : 'black',
-              background: item.done ? '#1D71F2' : 'white'
+              background: item.done ? '#1D71F2' : 'white',
+              transition: 'background-color 0.3s, color 0.3s'
             }}
             onClick={() => {
               this.props.testCallback(i)
