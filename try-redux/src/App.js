@@ -9,7 +9,8 @@ class App extends Component {
       <div style= {{
         width: '50vw',
         marginLeft: '25vw',
-        fontFamily: 'system-ui'
+        fontFamily: 'system-ui',
+        userSelect: 'none'
       }}>
         <h1>To-Do List</h1>
         {this.props.items.map((item, i) => (
