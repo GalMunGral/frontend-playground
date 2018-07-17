@@ -47,17 +47,17 @@ d3.json('http://localhost:8080/data.json')
   function getX(timestamp) {
     const fromStart = timestamp - MIN_TIME;
     const ratio = fromStart / (MAX_TIME - MIN_TIME);
-    return ratio * 10000;
+    return ratio * 20000;
   }
 
   data.forEach((d, i) => {
-    const curY = 10 * i;
+    const curY = 20 * i;
     d.value.forEach(interval => {
       context.fillRect(
         getX(interval.start),
         curY,
         getX(interval.end) - getX(interval.start),
-        10);
+        20);
     }) 
   })
 
