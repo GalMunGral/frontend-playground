@@ -1,0 +1,4 @@
+#!/bin/bash
+export COLUMNS
+node index.js $1
+unset COLUMNS
