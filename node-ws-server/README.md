@@ -1,4 +1,4 @@
-The server echos every message and sends a `Yo` every second. 
+Echos every message and sends a `Yo` every second. 
 Try in browser:
 ```javascript
 var s = new WebSocket('ws://localhost:8080');
