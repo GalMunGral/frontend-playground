@@ -2,7 +2,8 @@ const https = require('https');
 const fs = require('fs');
 const { JSDOM } = require('jsdom');
 
-const f = fs.createWriteStream('list.txt');
+const dateString = new Date().toISOString();
+const f = fs.createWriteStream(`output/${dateString}.txt`);
 const set = new Set();
 
 // For later use
