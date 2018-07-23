@@ -1,5 +1,3 @@
-To compile run `g++ *.cpp [-o file]`
+`Client`: Sends a `GET` request to www.google.com and prints the response
 
-The `Client` instance sends a `GET` request to `172.217.0.78:80` (www.google.com)
-
-The `Server` instance listens on port `3000` and sends back `<h1>Hello</h1><p>World</p>` for any request.
+`Server`: Listens on port 3000 and always sends back `<h1>Hello</h1><p>World</p>`
