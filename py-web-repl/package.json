@@ -1,0 +1,22 @@
+{
+  "name": "web-repl",
+  "version": "1.0.0",
+  "description": "`Text Input  => HTTP Request => Evaluated by A Interpreter Subprocess => HTTP Response => Text Output`",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalMunGral/web-repl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalMunGral/web-repl/issues"
+  },
+  "homepage": "https://github.com/GalMunGral/web-repl#readme"
+}
