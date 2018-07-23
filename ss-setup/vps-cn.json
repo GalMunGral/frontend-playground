@@ -1,0 +1,7 @@
+{
+  "platform": "tencent",
+  "public_ip": "203.195.151.232",
+  "ports": [],
+  "user": "ubuntu",
+  "rsa_key": "./rsa-key"
+}

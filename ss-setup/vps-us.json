@@ -1,0 +1,8 @@
+{
+  "platform": "azure",
+  "public_ip": "23.96.51.99",
+  "ports": [1040],
+  "user": "wenqi",
+  "password": "",
+  "rsa_key": null
+}
