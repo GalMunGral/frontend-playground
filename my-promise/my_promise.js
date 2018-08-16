@@ -22,11 +22,10 @@ class MyPromise {
     if (!this.resolved) {
       // Create a new promise for the result of callback
       const nextPromise = new MyPromise();
-      // Tell this promise to pipe its value to the next promise
       this.callback = (val) => {
         // Evaluate the callback once current value is resolved
         const result = func(val);
-        // Result may or may not be a ne MyPromise instance
+        // Pipe the value to next promise 
         if (result instanceof MyPromise) {
           result.then(val => nextPromise.resolve(val));
         } else {
