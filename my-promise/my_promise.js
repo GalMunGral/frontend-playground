@@ -1,7 +1,6 @@
 const { performance } = require('perf_hooks');
 
 class MyPromise {
-
   constructor(executor) {
     this.value = null;
     this.resolved = false;
@@ -17,7 +16,6 @@ class MyPromise {
       this.callback(val);
     }
   }
-
 
   then(func) {
     if (!this.resolved) {
