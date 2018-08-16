@@ -1,12 +1,12 @@
 const { performance } = require('perf_hooks');
 
 class MyPromise {
-  constructor(executor) {
+  constructor(execute) {
     this.value = null;
     this.resolved = false;
     this.callback = null;
     this.resolve = this.resolve.bind(this);
-    if (executor) executor(this.resolve);
+    if (execute) execute(this.resolve);
   }
   
   resolve(val) {
