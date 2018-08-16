@@ -1,5 +1,3 @@
-const { performance } = require('perf_hooks');
-
 class MyPromise {
   constructor(execute) {
     this.value = null;
@@ -43,9 +41,7 @@ class MyPromise {
       }
     }
   }
-
 }
-
 
 var aPromise= new MyPromise(resolve => {
   setTimeout(() => {
@@ -65,3 +61,4 @@ setTimeout(() => {
   console.log('Current time: ' + performance.now());
   aPromise.then(res => console.log(res));
 }, 4000);
+
