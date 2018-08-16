@@ -9,9 +9,10 @@ class MyPromise {
     if (execute) execute(this.resolve);
   }
   
+  // Could be evoked directly
   resolve(val) {
     this.value = val;
-    this.resovled = true;
+    this.resolved = true;
     if (this.callback) {
       this.callback(val);
     }
@@ -19,9 +20,13 @@ class MyPromise {
 
   then(func) {
     if (!this.resolved) {
+      // Create a new promise for the result of callback
       const nextPromise = new MyPromise();
+      // Tell this promise to pipe its value to the next promise
       this.callback = (val) => {
+        // Evaluate the callback once current value is resolved
         const result = func(val);
+        // Result may or may not be a ne MyPromise instance
         if (result instanceof MyPromise) {
           result.then(val => nextPromise.resolve(val));
         } else {
@@ -30,43 +35,34 @@ class MyPromise {
       }
       return nextPromise;
     } else {
+      // If already resolved, execute callback immediately
       result = func(this.val);
       if (result instanceof MyPromise) {
         return result;
       } else {
-        return new Promise((resolve) => {
-          resolve(result);
-        });
+        return new MyPromise(resolve => resolve(result));
       }
     }
   }
 
 }
 
-var start = performance.now();
-function getTime() {
-  return parseInt((performance.now() - start) / 1000);
-}
-a = new MyPromise(resolve => {
+
+var aPromise= new MyPromise(resolve => {
   setTimeout(() => {
     resolve(100)
   }, 3000);
 }).then(res => {
+  console.log('Current time: ' + performance.now());
+  console.log(res);
   return new MyPromise(resolve => {
-    console.log(res);
-    start = performance.now();
     setTimeout(() => {
-      console.log(`Time Elapsed: ${getTime()}`);
       resolve(res + 1);
-    }, 2000);
-  });
-}).then(res => {
-  return new MyPromise(resolve => {
-    console.log(res);
-    start = performance.now();
-    setTimeout(() => {
-      console.log(`Time Elapsed: ${getTime()}`);
-      resolve(res + 1);
-    }, 2000);
+    }, 1000);
   });
 });
+
+setTimeout(() => {
+  console.log('Current time: ' + performance.now());
+  aPromise.then(res => console.log(res));
+}, 4000);
