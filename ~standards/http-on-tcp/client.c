@@ -27,13 +27,9 @@ int main(int argc, char const *argv[])
     if (strstr(recv_buffer, "\r\n\r\n") != NULL) {
       if (0 == header_recved) {
         header_recved = 1;
-      } else {
-        return 0;
-      }
+      } else return 0;
     }
     memset(recv_buffer, 0, 4096);
-
   }
-
   return 0;
 }
