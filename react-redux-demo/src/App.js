@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 class App extends Component {
 
   clickHandler(e) {
-    console.log('hey');
     if (e.clientX < window.innerWidth/2) {
       this.props.updateCounter(-1);
     } else {
