@@ -58,3 +58,16 @@ Power comes from dynamic computation of result
 - When any operand changes, result value is automatically recomputed
 Express relationships declaratively
 Systems updates as necessary to preserve the constraints you’ve specified
+
+## Dependency graphs
+Useful to look at a system of constraints as a “dependency graph”
+- graph showing what depends on what
+- Normally require dependency graph to be acyclic
+  - cyclic graph means cyclic definition
+  - most efficient algorithms require that dependency graph be a tree (acyclic undirected graph)
+## Simple algorithm for one-way
+For each keep:
+- value- the value of the var
+- eqn - code to eval constraint
+- dep - list of vars we depend on 
+- done- boolean “mark” for alg
