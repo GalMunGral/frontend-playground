@@ -48,3 +48,13 @@ HTMLElement.style.someCSSProperty = value(...params);
 The virtual DOM also functions as a scope tree, in that each parameter needed for evaluation is retrieved by traversing up the tree to locate the owner of that property. Each node maintains a lookup table that caches references to the property owners so that traversal is only performed once for each property name.
 
 During the initial render, each evaluation also results in a new entry in each dependent table associated with the property owners, which maps a property name to a list of UI attributes that depend on that property and all information needed to compute and update each attribute. Later, when any of the properties is updated, the setter method will use this table to update the UI accordingly.
+
+
+----
+## The Power of Constraints
+Power comes from dynamic computation of result
+- Value isn’t just computed immediately
+- Instead, saves references to objects involved in calculation
+- When any operand changes, result value is automatically recomputed
+Express relationships declaratively
+Systems updates as necessary to preserve the constraints you’ve specified
