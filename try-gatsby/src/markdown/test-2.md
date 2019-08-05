@@ -1,8 +1,8 @@
 ---
-path: /github/notube
+path: /github/test-2
 title: NoTube
 ---
-## Client Side: Shaka Player by Google 
+## Client Side: Shaka Player by Google - 2
 Offical build instructions: [[Link]](https://github.com/google/shaka-player/blob/master/docs/tutorials/welcome.md)
 ```bash
 # Install prerequisites 

@@ -5,6 +5,16 @@ export default function MarkdownTemplate({
   data
 }) {
   return (
-    <div>yo hahaha</div>
+    <div dangerouslySetInnerHTML={{
+      __html: data.markdownRemark.html
+    }}></div>
   )
 }
+
+export const query = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: {path: {eq: $path}}) {
+      html
+    }
+  }
+`;

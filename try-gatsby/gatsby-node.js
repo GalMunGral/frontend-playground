@@ -6,13 +6,26 @@
 const path = require(`path`);
 
 // You can delete this file if you're not using it
-exports.createPages = function({
+exports.createPages = async function({
   actions, graphql
 }) {
   const { createPage } = actions;
-  createPage({
-    path: '/test',
-    component: path.resolve('src/templates/markdownTemplate.js'),
-    context: {}
+  const { data } = await graphql(`
+    query {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            path
+          }
+        }
+      }
+    }
+  `);
+  data.allMarkdownRemark.nodes.forEach(node => {
+    createPage({
+      path: node.frontmatter.path,
+      component: path.resolve('src/templates/markdownTemplate.js'),
+      context: {}
+    });
   });
 }
