@@ -1,5 +1,5 @@
 ---
-path: /github/sitbit-server
+path: /sitbit-server
 ---
 Use `source init.sql` to configure database.
 

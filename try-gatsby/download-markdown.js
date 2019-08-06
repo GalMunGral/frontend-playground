@@ -30,6 +30,7 @@ let req = https.request('https://api.github.com/graphql', {
     let repos = data.user.repositories.nodes;
     repos.forEach(repo => {
       exec('./create_frontmatter.sh', {
+        cwd: __dirname,
         env: Object.assign({
           REPO_URL: repo.url,
           PAGE_PATH: repo.name
