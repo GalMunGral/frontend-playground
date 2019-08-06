@@ -34,8 +34,10 @@ let req = https.request('https://api.github.com/graphql', {
           REPO_URL: repo.name,
           PAGE_PATH: repo.url
         }, process.env)
-      }, (err) => {
+      }, (err, stdout, stderr) => {
         if (err) console.log(err);
+        console.log('stdout:', stdout);
+        console.log('stderr:', stderr);
       });
     });
   });
