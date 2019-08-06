@@ -1,5 +1,5 @@
 ---
-path: cs2110-gba-raiden
+path: /github/cs2110-gba-raiden
 ---
 # GBA Raiden
 *Project for CS 2110 - Computer Organization and Programming*.
