@@ -31,8 +31,8 @@ let req = https.request('https://api.github.com/graphql', {
     repos.forEach(repo => {
       exec('./create_frontmatter.sh', {
         env: Object.assign({
-          REPO_URL: repo.name,
-          PAGE_PATH: repo.url
+          REPO_URL: repo.url,
+          PAGE_PATH: repo.name
         }, process.env)
       }, (err, stdout, stderr) => {
         if (err) console.log(err);
