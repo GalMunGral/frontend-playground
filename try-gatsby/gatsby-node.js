@@ -9,7 +9,7 @@ const path = require(`path`);
 exports.createPages = async function({
   actions, graphql
 }) {
-  require('./download-markdown');
+  // require('./download-markdown');
   const { createPage } = actions;
   const { data } = await graphql(`
     query {
