@@ -1,7 +1,7 @@
 {
   "log": {
-    "access": "C:\\Users\\hewen\\Downloads\\v2ray-windows-64-1\\log.txt",
-    "error": "C:\\Users\\hewen\\Downloads\\v2ray-windows-64-1\\log.txt",
+    "access": "./access_log",
+    "error": "./error_log",
     "loglevel": "warning"
   },
   "inbounds": [
