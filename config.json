@@ -1,0 +1,47 @@
+{
+  "log": {
+    "access": "C:\\Users\\hewen\\Downloads\\v2ray-windows-64-1\\log.txt",
+    "error": "C:\\Users\\hewen\\Downloads\\v2ray-windows-64-1\\log.txt",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 1080,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+	"enabled": true,
+	"destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "udp": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "streamSettings": {
+	"network": "ws",
+	"security": "tls",
+	"wsSettings": {
+	  "path": "/ws"
+	}
+      },
+      "settings": {
+        "vnext": [
+          {
+            "address": "mmmono.tk",
+            "port": 443,
+            "users": [
+              {
+                "id": "68f8aedc-4d73-4ba2-b934-c2409037b046",
+        	"alterId": 64
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
